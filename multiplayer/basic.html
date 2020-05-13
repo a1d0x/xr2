@@ -25,33 +25,38 @@
         <img id="sky" src="http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
 
         <!-- Templates -->
+
+        <a-box material="" geometry="" scale="0.25 1.5 6.2" position="-3.63 0.75 -0.4"></a-box>
+        <a-box material="" geometry="" scale="0.25 1.5 7" position="-0.015 0.75 -3.62" rotation="0 -90 0"></a-box>
+        <a-box material="" geometry="" scale="0.25 1.5 7" position="-0.01 0.75 3.62" rotation="0 -90 0"></a-box>
+        <a-box material="" geometry="" scale="0.25 1.5 7" position="3.6 0.75 0"></a-box>
         <!-- Avatar -->
         <template id="avatar-template">
           <a-entity class="avatar">
             <a-sphere class="head"
-              position="0 0.25 2.8"
+              position="0 0.383 2.8"
               color="#ffdbca"
               geometry=""
-              scale="0.075 0.075 0.075"
+              scale="0.1 0.1 0.1"
               visible=""></a-sphere>
-              <a-box class="torso"
+              <a-sphere class="torso"
                 material="color: #ff0000"
                 geometry=""
                 position="0 0.005 2.8"
-                scale="0.125 0.35 0.125"></a-box>
-            <a-box class="own-right-arm"
-                   position="0.1 0.005 2.8"
+                scale="0.140 0.250 0.125"></a-sphere>
+            <a-sphere class="own-right-arm"
+                   position="0.165 0.005 2.8"
                    material="color: #ff0000"
                    geometry=""
-                   scale="0.05 0.25 0.05"
-            ></a-box>
-            <a-box class="own-left-arm"
-                   position="-0.1 0.005 2.8"
+                   scale="0.05 0.12 0.05"
+            ></a-sphere>
+            <a-sphere class="own-left-arm"
+                   position="-0.165 0.005 2.8"
+                   rotation="-"
                    material="color: #ff0000"
                    geometry=""
-                   scale="0.05 0.25 0.05"
-            ></a-box>
-              </a-sphere>
+                   scale="0.05 0.12 0.05"
+            ></a-sphere>
           </a-entity>
         </template>
 
