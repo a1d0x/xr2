@@ -7,17 +7,34 @@
   <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
   <script src="/build.js"></script>
+  <script src="naf-firebase-adapter.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
   <script>window.NAF || document.write('<script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js">\x3C/script>')</script>
 
   <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
   <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
   <script src="/js/spawn-in-circle.component.js"></script>
+
+  <script>
+    window.firebaseConfig = {
+      authType: 'none',
+      apiKey: 'AIzaSyBvfw8AY5Wp_bKrTuw7DhnbiQ3_Pisecg8',
+      authDomain: 'vr-classroom-ad716.firebaseapp.com',
+      databaseURL: 'https://vr-classroom-ad716.web.app/',
+      projectId: "vr-classroom-ad716",
+      storageBucket: "vr-classroom-ad716.appspot.com",
+      messagingSenderId: "1029568417046",
+      appId: "1:1029568417046:web:53b83d0d97ecbf4c71d437"
+    };
+  </script>
 </head>
 <body>
 <a-scene networked-scene="
-      room: dev;
+      room: firebase;
       debug: true;
-      adapter: socketio;
+      adapter: firebase;
     ">
   <a-box material="" geometry="" scale="0.25 1.5 6.2" position="-3.63 0.75 -0.4"></a-box>
   <a-box material="" geometry="" scale="0.25 1.5 7" position="-0.015 0.75 -3.62" rotation="0 -90 0"></a-box>
@@ -34,7 +51,7 @@
     <template id="avatar-template">
       <a-entity class="avatar">
         <a-sphere class="head"
-                  position="0 0.360 2.8"
+                  position="0 0.4 0"
                   color="#ffdbca"
                   geometry=""
                   scale="0.1 0.1 0.1"
@@ -42,7 +59,7 @@
         <a-sphere class="torso"
                   material="color: #ff0000"
                   geometry=""
-                  position="0 0.005 2.8"
+                  position="0 0 2.8"
                   scale="0.130 0.250 0.125"></a-sphere>
         <a-sphere class="own-right-arm"
                   position="0.185 0.042 2.8"
@@ -132,6 +149,8 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
 
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
