@@ -34,17 +34,20 @@
       debug: true;
       adapter: firebase;
     ">
+
+  <a-assets>
+    <video id="video" autoplay="" muted="" loop="true" src="video.mp4" playsinline="" webkit-playsinline="" crossorigin="anonymous"></video>
+  </a-assets>
+
+  <!-- Using the asset management system. -->
+  <a-video src="#video" position="0 0.254 -2.477" material="" geometry="width: 0.35; height: 0.2" rotation="-105 180 180" scale="1.100 1.100 1"></a-video>
+
   <a-box material="" geometry="" scale="0.25 1.5 6.2" position="-3.63 0.75 -0.4"></a-box>
   <a-box material="" geometry="" scale="0.25 1.5 7" position="-0.015 0.75 -3.62" rotation="0 -90 0"></a-box>
   <a-box material="" geometry="" scale="0.25 1.5 7" position="-0.01 0.75 3.62" rotation="0 -90 0"></a-box>
   <a-box material="" geometry="" scale="0.25 1.5 7" position="3.6 0.75 0"></a-box>
+
   <a-assets>
-
-    <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
-    <img id="sky" src="http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
-
-    <!-- Templates -->
-
     <!-- Avatar -->
     <template id="avatar-template">
       <a-entity class="avatar">
@@ -76,13 +79,18 @@
       </a-entity>
     </template>
 
-    <!-- /Templates -->
   </a-assets>
+
+  <!-- STUDENT TABLES -->
+  <a-entity position="0 -0.18 -2.5" rotation="0 0 0">
+    <a-box material="color: #666" geometry="" scale="0.063 0.4 0.25" position="0 0.4 0" rotation="14.999999999999998 0 90"></a-box>
+    <a-box material="color: #666" geometry="" scale="0.063 0.4 0.063" position="0 0.2 0"></a-box>
+  </a-entity>
 
   <a-entity id="player"
             networked="template:#avatar-template;attachTemplateToLocal:false;"
             camera
-            position="0 0.4 2.8"
+            position="0 0.5 2.8"
             spawn-in-circle="radius:1"
             wasd-controls look-controls
   >
